@@ -13,7 +13,8 @@
  
  >Type vagrant ssh
  
- >Type python news_forum.py, this will open a web page with the results in it
+ >Type python news_forum.py, this will open a web page with the results in 
+ it on the localhost:8000
  
  >Open the directory you will find a file called result.csv that contains the
   result of the sql queries
