@@ -37,7 +37,7 @@ AUTHORS = '''\
 '''
 # HTML template for error data
 ERRORS = '''\
-    <div class=post><h3>Day</h3>%s<br><h3>Error percentage</h3>%s</div>
+    <div class=post><h3>Day</h3>%s<br><h3>Error percentage</h3>%s %%</div>
 '''
 
 
