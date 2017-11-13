@@ -33,12 +33,11 @@ ARTICLES = '''\
 '''
 # HTML template for authors data
 AUTHORS = '''\
-    <div class=post><h3>Author name</h3>%s<br><h3>Article name</h3>%s
-    <br><h3>Views</h3>%s</div>
+    <div class=post><h3>Author name</h3>%s<br><h3>Views</h3>%s</div>
 '''
 # HTML template for error data
 ERRORS = '''\
-    <div class=post><h3>Day</h3>%s<br><h3>Error percentage</h3>%s %%</div>
+    <div class=post><h3>Day</h3>%s<br><h3>Error percentage</h3>%s</div>
 '''
 
 
@@ -48,9 +47,9 @@ def main():
     Main page of the report.
     :return:
     """
-    articles = "".join(ARTICLES % (name, count) for name, count in
+    articles = "".join(ARTICLES % (name, views) for name, views in
                        get_three_most_popular_articles())
-    authors = "".join(AUTHORS % (name, title, count) for name, title, count in
+    authors = "".join(AUTHORS % (name, count) for name, count in
                       get_authors())
     errors = "".join(ERRORS % (date, num) for date, num in get_errors())
     result = "<h2> 3 Most famous articles</h2>'{0}', " \

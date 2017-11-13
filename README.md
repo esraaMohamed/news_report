@@ -24,7 +24,7 @@
 
  >cd into the directory where the code is, which should be inside the VM
  
- >Type python news_forum.py, this will open a web page with the results in 
+ >Type python3 news_forum.py, this will open a web page with the results in 
  it on the localhost:8000
  
  >Open the directory you will find a file called result.csv that contains the
