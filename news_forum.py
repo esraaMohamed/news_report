@@ -13,10 +13,10 @@ HTML_WRAP = '''\
     <title>News Report</title>
     <style>
       h1, h2{ text-align: center; }
-      div.post { 
+      div.post {
         border: 1px solid #999;
         padding: 10px 10px;
-        margin: 10px 20%%; 
+        margin: 10px 20%%;
         }
     </style>
   </head>

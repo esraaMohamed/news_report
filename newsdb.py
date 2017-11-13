@@ -47,11 +47,11 @@ def get_three_most_popular_articles():
 def get_authors():
     db, cursor = connect(DBNAME)
     query = '''
-    select authors.name, sum(articleCount) from 
-    (select author, title, count(*) as articleCount from articles 
-    join log on log.path = concat('/article/', articles.slug) 
-    group by title, author order by articleCount desc) as article 
-    join authors on article.author = authors.id 
+    select authors.name, sum(articleCount) from
+    (select author, title, count(*) as articleCount from articles
+    join log on log.path = concat('/article/', articles.slug)
+    group by title, author order by articleCount desc) as article
+    join authors on article.author = authors.id
     group by authors.name limit 4;
     '''
     cursor.execute(query)
@@ -68,11 +68,11 @@ def get_authors():
 
 def get_errors():
     db, cursor = connect(DBNAME)
-    query = '''SELECT 
-    l1.time::timestamp::date, count(l2.id)::float / 
+    query = '''SELECT
+    l1.time::timestamp::date, count(l2.id)::float /
     count(l1.id)::float as error_percentage
-    FROM 
-    public.log as  l1 left join (select * from public.log where status 
+    FROM
+    public.log as  l1 left join (select * from public.log where status
     like '%404%') as l2 on l1.id = l2.id
     group by l1.time::timestamp::date
     having count(l2.id)::float / count(l1.id)::float >= 0.01;
